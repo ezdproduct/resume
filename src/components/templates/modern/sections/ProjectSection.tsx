@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { Project, GlobalSettings } from "@/types/resume";
 import { normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString, cn } from "@/lib/utils";
+import { formatDateString, cn, hardenVietnamese } from "@/lib/utils";
 import { useLocale } from "@/i18n/compat/client";
 
 interface ProjectSectionProps {
@@ -26,20 +26,19 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects, globalSetting
                 <AnimatePresence mode="popLayout">
                     {visibleProjects.map((project) => (
                         <motion.div key={project.id} style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                            <motion.div className="flex items-center justify-between gap-4">
-                                <div className={cn("flex items-center gap-2 truncate", flexLayout ? "" : "flex-1")}>
-                                    <h3 className="font-bold truncate" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{project.name}</h3>
+                            <motion.div className="flex items-start justify-between gap-4">
+                                <div className={cn("flex flex-col flex-1 min-w-0")}>
+                                    <h3 className="font-bold whitespace-pre-wrap text-pretty" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{hardenVietnamese(project.name)}</h3>
+                                    {project.link && !centerSubtitle && (
+                                        <a href={project.link.startsWith("http") ? project.link : `https://${project.link}`} target="_blank" rel="noopener noreferrer"
+                                            className="underline text-xs opacity-70 break-all" title={project.link}>
+                                            {(() => { try { return new URL(project.link.startsWith("http") ? project.link : `https://${project.link}`).hostname.replace(/^www\./, ""); } catch { return project.link; } })()}
+                                        </a>
+                                    )}
                                 </div>
-                                {project.link && !centerSubtitle && (
-                                    <a href={project.link.startsWith("http") ? project.link : `https://${project.link}`} target="_blank" rel="noopener noreferrer"
-                                        className={cn("underline truncate shrink", flexLayout ? "" : "flex-1")} title={project.link}>
-                                        {(() => { try { return new URL(project.link.startsWith("http") ? project.link : `https://${project.link}`).hostname.replace(/^www\./, ""); } catch { return project.link; } })()}
-                                    </a>
-                                )}
-                                {!project.link && !centerSubtitle && !flexLayout && <div className="flex-1" />}
                                 {centerSubtitle && (
-                                    <motion.div layout="position" className={cn("text-subtitleFont truncate", flexLayout ? "ml-[16px]" : "flex-1")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
-                                        {project.role}
+                                    <motion.div layout="position" className={cn("text-subtitleFont whitespace-pre-wrap text-pretty flex-1 text-center")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
+                                        {hardenVietnamese(project.role)}
                                     </motion.div>
                                 )}
                                 <div className={cn("text-subtitleFont shrink-0 whitespace-nowrap", flexLayout ? "ml-auto" : "text-right")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
@@ -47,7 +46,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ projects, globalSetting
                                 </div>
                             </motion.div>
                             {project.role && !centerSubtitle && (
-                                <motion.div layout="position" className="text-subtitleFont" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{project.role}</motion.div>
+                                <motion.div layout="position" className="text-subtitleFont whitespace-pre-wrap text-pretty mt-0.5" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{hardenVietnamese(project.role)}</motion.div>
                             )}
                             {project.link && centerSubtitle && (
                                 <a href={project.link.startsWith("http") ? project.link : `https://${project.link}`} target="_blank" rel="noopener noreferrer" className="underline" title={project.link}>{project.link}</a>

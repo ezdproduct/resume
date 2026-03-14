@@ -29,6 +29,7 @@ const PageBreakLine = React.memo(
     contentPerPagePx: number;
     pagePadding: number;
   }) => {
+    const t = useTranslations("previewDock");
     // 预览中 #resume-preview 有 padding-top，内容从 pagePadding 位置开始
     // 每页能容纳 contentPerPagePx 高度的内容（与 Puppeteer PDF margin 一致）
     // 第 N 页结束位置 = pagePadding + N * contentPerPagePx
@@ -42,7 +43,7 @@ const PageBreakLine = React.memo(
         <div className="relative w-full">
           <div className="absolute w-full border-t-2 border-dashed border-red-400" />
           <div className="absolute right-0 -top-6 text-xs text-red-500">
-            第{pageNumber}页结束
+            {t("pageBreak", { pageNumber })}
           </div>
         </div>
       </div>
@@ -150,7 +151,7 @@ const PreviewPanel = React.forwardRef<HTMLDivElement, PreviewPanelProps>(
     }, [cannotFit, t]);
 
     const { contentPerPagePx, pageBreakCount } = useMemo(() => {
-      const MM_TO_PX = 3.78;
+      const MM_TO_PX = 96 / 25.4;
       const A4_HEIGHT_PX = 297 * MM_TO_PX;
 
       // 与 Puppeteer PDF 导出一致：margin: pagePadding px（上下各一份）
@@ -169,9 +170,9 @@ const PreviewPanel = React.forwardRef<HTMLDivElement, PreviewPanelProps>(
         ? baseContentPerPage / scaleFactor
         : baseContentPerPage;
 
-      // contentHeight 包含 #resume-preview 的 padding（上+下）
-      // 实际内容高度 = contentHeight - 2 * pagePadding
-      const actualContentHeight = contentHeight - 2 * pagePadding;
+      // contentHeight is currently based on #resume-preview height
+      // actualContentHeight is the height of content without margins
+      const actualContentHeight = contentHeight;
       const pageCount = Math.max(1, Math.ceil(actualContentHeight / effectiveContentPerPage));
       const pageBreakCount = Math.max(0, pageCount - 1);
 
@@ -197,13 +198,15 @@ const PreviewPanel = React.forwardRef<HTMLDivElement, PreviewPanelProps>(
               "shadow-lg",
               "relative mx-auto"
             )}
+            style={{
+              padding: `${activeResume.globalSettings?.pagePadding}px`,
+            }}
           >
             <div
               ref={resumeContentRef}
               id="resume-preview"
               style={{
                 fontFamily: selectedFontFamily,
-                padding: `${activeResume.globalSettings?.pagePadding}px`,
                 ...(isScaled
                   ? {
                     transform: `scale(${scaleFactor})`,
@@ -271,7 +274,7 @@ const PreviewPanel = React.forwardRef<HTMLDivElement, PreviewPanelProps>(
                               key={`page-break-${pageNumber}`}
                               pageNumber={pageNumber}
                               contentPerPagePx={contentPerPagePx}
-                              pagePadding={pagePadding}
+                              pagePadding={0}
                             />
                           );
                         }

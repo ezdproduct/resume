@@ -1,0 +1,780 @@
+{
+  "common": {
+    "title": "Magic Resume",
+    "subtitle": "Trình chỉnh sửa Resume tối ưu bằng AI",
+    "description": "Magic Resume là trình chỉnh sửa Resume mã nguồn mở, miễn phí và ưu tiên quyền riêng tư. Không cần đăng ký, mọi dữ liệu được lưu trữ cục bộ, hỗ trợ sao lưu và xuất dữ liệu, đảm bảo nội dung của bạn luôn sẵn sàng.",
+    "dashboard": "Bảng điều khiển",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "newResume": "Resume mới",
+    "copy": "Sao chép",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "deleteSuccess": "Đã xóa thành công",
+    "deleteModuleConfirm": "Bạn có chắc muốn xóa mô-đun này không? Thao tác này không thể hoàn tác.",
+    "configured": "Đã cấu hình",
+    "notConfigured": "Chưa cấu hình"
+  },
+  "home": {
+    "header": {
+      "title": "Magic Resume",
+      "startButton": "Bắt đầu ngay",
+      "features": "Tính năng",
+      "pricing": "Bảng giá",
+      "about": "Giới thiệu",
+      "login": "Đăng nhập",
+      "register": "Đăng ký",
+      "dashboard": "Bảng điều khiển"
+    },
+    "hero": {
+      "badge": "Tạo Resume Thông minh",
+      "title": "Tạo Resume Đơn giản và Thông minh",
+      "subtitle": "Magic Resume sử dụng công nghệ AI giúp bạn nhanh chóng tạo những bản Resume chuyên nghiệp. Miễn phí, không cần đăng kí, bảo mật tuyệt đối.",
+      "cta": "Bắt đầu ngay",
+      "secondary": "Xem các Mẫu"
+    },
+    "features": {
+      "title": "Tại sao chọn Magic Resume?",
+      "subtitle": "Chúng tôi cung cấp giải pháp Resume tất cả trong một để hành trình tìm việc của bạn thuận lợi hơn",
+      "ai": {
+        "badge": "Kiểm tra Thông minh bằng AI",
+        "title": "Phát hiện Thông minh, Tư vấn Chuyên nghiệp",
+        "description": "Tích hợp tính năng kiểm tra ngữ pháp thông minh, tự động nhận diện các diễn đạt chưa phù hợp, đưa ra gợi ý chỉnh sửa chuyên nghiệp để bản Resume của bạn nổi bật hơn.",
+        "item1": "Cải thiện nội dung thông minh",
+        "item1_description": "AI tự động tối ưu hóa cách diễn đạt, giúp Resume của bạn chuyên nghiệp hơn",
+        "item2": "Kiểm tra ngữ pháp",
+        "item2_description": "Tự động phát hiện và sửa lỗi ngữ pháp cũng như lỗi chính tả"
+      },
+      "storage": {
+        "badge": "Lưu trữ Cục bộ",
+        "title": "Bảo mật Dữ liệu, Ưu tiên Quyền riêng tư",
+        "description": "Toàn bộ dữ liệu Resume được lưu trữ hoàn toàn trên thiết bị của bạn, không lo rò rỉ thông tin. Hỗ trợ xuất và sao lưu dữ liệu mọi lúc.",
+        "item1": "Lưu trữ tệp cục bộ",
+        "item1_description": "Dữ liệu Resume được lưu trữ an toàn trên ổ cứng máy tính của bạn",
+        "item2": "Nhiều định dạng xuất",
+        "item2_description": "Hỗ trợ xuất sang định dạng PDF và JSON",
+        "item3": "Hỗ trợ sao lưu dữ liệu"
+      },
+      "preview": {
+        "badge": "Xem trước Thời gian thực",
+        "title": "Những gì bạn thấy là những gì bạn nhận được",
+        "item1": "Xem trước hiệu ứng chỉnh sửa ngay lập tức",
+        "item2": "Hỗ trợ nhiều định dạng xuất"
+      }
+    },
+    "news": {
+      "label": "Tin tức",
+      "content": "Tính năng cải thiện Resume bằng AI đã ra mắt"
+    },
+    "footer": {
+      "copyright": "© 2025 Magic Resume. Mọi quyền được bảo lưu."
+    },
+    "changelog": "Nhật ký thay đổi",
+    "cta": {
+      "title": "Bắt đầu Chương mới trong Sự nghiệp",
+      "description": "Sử dụng Magic Resume ngay để tạo một bản Resume ấn tượng",
+      "button": "Sử dụng miễn phí ngay"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "items": [
+        {
+          "question": "Magic Resume có miễn phí không?",
+          "answer": "Magic Resume hiện tại miễn phí cho các nhu cầu tạo Resume cơ bản. Các tính năng của phiên bản mã nguồn mở sẽ không đổi và tính năng xuất PDF sẽ luôn miễn phí."
+        },
+        {
+          "question": "Dữ liệu Resume của tôi có an toàn không?",
+          "answer": "Rất an toàn. Magic Resume sử dụng bộ nhớ cục bộ, nghĩa là mọi dữ liệu được lưu trên chính thiết bị của bạn, không lưu trữ đám mây, đảm bảo quyền riêng tư tuyệt đối."
+        },
+        {
+          "question": "Hỗ trợ những định dạng xuất nào?",
+          "answer": "Hiện tại chúng tôi hỗ trợ xuất PDF, đảm bảo Resume của bạn giữ nguyên định dạng trên mọi thiết bị. Chúng tôi dự kiến sẽ hỗ trợ nhiều định dạng hơn trong tương lai."
+        },
+        {
+          "question": "Làm thế nào để đồng bộ giữa các thiết bị?",
+          "answer": "Chúng tôi cung cấp tính năng xuất cấu hình dưới dạng JSON, cho phép bạn lưu cài đặt Resume và mở lại trên bất kỳ thiết bị nào."
+        },
+        {
+          "question": "Tôi có thể tùy chỉnh Resume đến mức nào?",
+          "answer": "Chúng tôi cung cấp nhiều tùy chọn tùy chỉnh từ màu sắc, bố cục đến phông chữ, giúp bạn điều chỉnh phong cách Resume theo sở thích cá nhân và yêu cầu của ngành nghề."
+        }
+      ]
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "appName": "Magic Resume",
+      "resumes": "Danh sách Resume",
+      "settings": "Cài đặt",
+      "templates": "Mẫu CV",
+      "ai": "Cấu hình AI"
+    },
+    "resumes": {
+      "created": "Đã tạo lúc",
+      "synced": "Tệp đã đồng bộ",
+      "view": "Xem",
+      "myResume": "Resume của tôi",
+      "create": "Tạo Resume",
+      "newResume": "Resume mới",
+      "newResumeDescription": "Tạo một bản Resume mới để bắt đầu.",
+      "import": "Nhập Resume",
+      "untitled": "Resume chưa đặt tên",
+      "importSuccess": "Đã nhập cấu hình thành công",
+      "importError": "Nhập thất bại, vui lòng kiểm tra định dạng tệp",
+      "namePlaceholder": "Nhập tên Resume...",
+      "importDialog": {
+        "title": "Nhập Resume",
+        "jsonTitle": "Nhập từ JSON",
+        "jsonDescription": "Nhập từ tệp cấu hình đã xuất (.json)",
+        "pdfTitle": "Nhập từ PDF",
+        "pdfDescription": "Sử dụng Gemini để chuyển đổi sang dữ liệu Resume có cấu trúc",
+        "importing": "Đang nhập, vui lòng đợi...",
+        "geminiConfigRequired": "Vui lòng cấu hình Gemini API Key và Model ID trong cài đặt AI trước",
+        "pdfSuccess": "Đã nhập PDF thành công",
+        "pdfError": "Nhập PDF thất bại. Vui lòng kiểm tra nội dung PDF hoặc cấu hình Gemini"
+      },
+      "notice": {
+        "title": "Lưu ý",
+        "description": "Bạn nên cấu hình thư mục sao lưu trong phần cài đặt để tránh mất dữ liệu khi trình duyệt xóa bộ nhớ đệm",
+        "goToSettings": "Đi tới Cài đặt"
+      },
+      "deleteConfirmTitle": "Xác nhận xóa Resume?",
+      "deleteConfirmDescription": "Thao tác này không thể hoàn tác. Bản Resume này và toàn bộ dữ liệu liên quan sẽ bị xóa vĩnh viễn khỏi thiết bị của bạn.",
+      "createDialog": {
+        "title": "Tạo Resume mới",
+        "description": "Bắt đầu Resume mới từ một mẫu trắng",
+        "tabs": {
+          "fromTemplate": "Từ mẫu có sẵn",
+          "uploadFile": "Tải tệp lên"
+        },
+        "namePlaceholder": "Tên",
+        "switchTemplate": "Đổi mẫu",
+        "cancel": "Hủy",
+        "create": "Tạo mới",
+        "blankTitle": "Resume trắng",
+        "startFromBlank": "Bắt đầu từ trang trắng",
+        "startFromTemplate": "Bắt đầu từ mẫu",
+        "blankCardDescription": "Sử dụng bố cục mặc định và bắt đầu từ con số không.",
+        "blankThumbnailDescription": "Bắt đầu với một trang sạch và tự định hình bản Resume theo phong cách riêng của bạn.",
+        "createNow": "Tạo ngay",
+        "backToGrid": "Quay lại danh sách mẫu",
+        "blankPreviewDescription": "Chọn một trang trắng và xây dựng mọi thứ từ đầu mà không có bất kỳ ràng buộc nào.",
+        "useThisTemplate": "Sử dụng mẫu này",
+        "sample": {
+          "company": "Google",
+          "position": "Kỹ sư phần mềm cao cấp",
+          "present": "Hiện tại",
+          "workDescription": "Dẫn dắt đội ngũ Frontend và cải thiện hiệu suất trang web thêm 40%."
+        }
+      }
+    },
+    "settings": {
+      "title": "Cài đặt",
+      "syncDirectory": {
+        "title": "Thư mục Đồng bộ",
+        "description": "Chọn một thư mục để đồng bộ và sao lưu các bản Resume của bạn.",
+        "currentSyncFolder": "Thư mục hiện tại",
+        "noFolderConfigured": "Chưa cấu hình thư mục",
+        "changeFolder": "Thay đổi thư mục",
+        "selectFolder": "Chọn thư mục"
+      },
+      "sync": {
+        "title": "Thư mục Đồng bộ",
+        "description": "Chọn một thư mục để đồng bộ và sao lưu các bản Resume của bạn.",
+        "select": "Chọn thư mục"
+      },
+      "ai": {
+        "title": "Cấu hình AI",
+        "currentModel": "Mô hình hiện tại",
+        "selectModel": "Chọn mô hình",
+        "getApiKey": "Lấy API Key",
+        "doubao": {
+          "title": "Doubao",
+          "description": "Lấy API key từ Volcengine",
+          "apiKey": "Doubao API Key",
+          "modelId": "Model ID"
+        },
+        "deepseek": {
+          "title": "DeepSeek",
+          "description": "Lấy API key từ nền tảng DeepSeek",
+          "apiKey": "DeepSeek API Key"
+        },
+        "openai": {
+          "title": "OpenAI",
+          "description": "Lấy API key từ OpenAI hoặc các nền tảng tương thích định dạng OpenAI",
+          "apiKey": "OpenAI API Key",
+          "modelId": "Model ID",
+          "apiEndpoint": "API Endpoint, ví dụ: https://api.openai.com/v1"
+        },
+        "gemini": {
+          "title": "Gemini",
+          "description": "Hỗ trợ tối ưu nội dung, kiểm tra ngữ pháp và nhập Resume từ ảnh/PDF. Khuyên dùng: gemini-flash-latest",
+          "apiKey": "Gemini API Key",
+          "modelId": "Gemini Model ID"
+        }
+      }
+    },
+    "templates": {
+      "title": "Mẫu CV",
+      "useTemplate": "Dùng mẫu này",
+      "preview": "Xem trước",
+      "switchTemplate": "Đổi mẫu",
+      "classic": {
+        "name": "Cổ điển",
+        "description": "Bố cục truyền thống và tối giản, phù hợp với hầu hết các vị trí công việc"
+      },
+      "modern": {
+        "name": "Hai cột",
+        "description": "Bố cục hai cột cổ điển, làm nổi bật các đặc điểm cá nhân"
+      },
+      "leftRight": {
+        "name": "Tiêu đề có nền",
+        "description": "Tiêu đề các mục có màu nền nổi bật, hiện đại"
+      },
+      "timeline": {
+        "name": "Dòng thời gian",
+        "description": "Phong cách Timeline, nhấn mạnh thứ tự thời gian của các trải nghiệm"
+      },
+      "minimalist": {
+        "name": "Tối giản",
+        "description": "Nhiều không gian trắng, phong cách bố cục sạch sẽ và tinh khiết"
+      },
+      "elegant": {
+        "name": "Trang nhã",
+        "description": "Tiêu đề trung tâm trên một cột, mang lại cảm giác thanh lịch"
+      },
+      "creative": {
+        "name": "Sáng tạo",
+        "description": "Thiết kế tương phản thịnh hành, năng động và cá tính"
+      }
+    }
+  },
+  "pdfExport": {
+    "button": {
+      "export": "Xuất file",
+      "exportPdf": "Xuất PDF (Server)",
+      "exportJson": "Xuất cấu hình JSON",
+      "exporting": "Đang xuất...",
+      "exportingJson": "Đang xuất...",
+      "print": "In từ trình duyệt"
+    },
+    "toast": {
+      "success": "Đã xuất PDF thành công",
+      "error": "Xuất PDF thất bại",
+      "jsonSuccess": "Đã xuất cấu hình thành công",
+      "jsonError": "Xuất cấu hình thất bại"
+    }
+  },
+  "previewDock": {
+    "pageBreak": "Kết thúc trang {pageNumber}",
+    "switchTemplate": "Đổi mẫu",
+    "grammarCheck": {
+      "idle": "Kiểm tra ngữ pháp bằng AI",
+      "checking": "Đang kiểm tra...",
+      "configurePrompt": "Vui lòng cấu hình mô hình AI",
+      "configureButton": "Cấu hình",
+      "errorToast": "Kiểm tra ngữ pháp thất bại, vui lòng thử lại"
+    },
+    "sidePanel": {
+      "expand": "Mở rộng bảng bên",
+      "collapse": "Thu gọn bảng bên"
+    },
+    "editPanel": {
+      "expand": "Mở rộng bảng chỉnh sửa",
+      "collapse": "Thu gọn bảng chỉnh sửa"
+    },
+    "previewPanel": {
+      "expand": "Mở rộng bảng xem trước",
+      "collapse": "Thu gọn bảng xem trước"
+    },
+    "github": "GitHub",
+    "backToDashboard": "Quay lại Bảng điều khiển",
+    "copyResume": {
+      "tooltip": "Sao chép Resume",
+      "success": "Đã sao chép Resume thành công",
+      "error": "Sao chép Resume thất bại"
+    },
+    "export": {
+      "tooltip": "Xuất Resume",
+      "pdf": "Xuất PDF",
+      "json": "Xuất JSON",
+      "print": "In ấn"
+    },
+    "autoOnePage": {
+      "tooltip": "Tự động căn chỉnh một trang",
+      "enabled": "Đã bật chế độ một trang",
+      "disabled": "Đã tắt chế độ một trang",
+      "cannotFit": "Nội dung quá nhiều. Đã tối ưu hết mức nhưng không thể vừa trong một trang. Hãy thử rút gọn nội dung hoặc chỉnh lề và cỡ chữ ở bảng bên."
+    }
+  },
+  "workbench": {
+    "sidePanel": {
+      "layout": {
+        "title": "Bố cục",
+        "addCustomSection": "Thêm mô-đun",
+        "addCustomSectionOption": "Thêm mục tùy chỉnh",
+        "standardSections": {
+          "skills": "Kỹ năng",
+          "experience": "Kinh nghiệm làm việc",
+          "projects": "Dự án",
+          "education": "Học vấn",
+          "selfEvaluation": "Giới thiệu bản thân",
+          "certificates": "Chứng chỉ / Giải thưởng"
+        }
+      },
+      "theme": {
+        "title": "Màu chủ đề",
+        "custom": "Tùy chỉnh"
+      },
+      "typography": {
+        "title": "Kiểu chữ",
+        "font": {
+          "title": "Phông chữ",
+          "alibaba": "Alibaba PuHuiTi",
+          "misans": "MiSans",
+          "notosanssc": "Noto Sans SC",
+          "sourcehanserifsc": "Source Han Serif SC",
+          "inter": "Inter (Hiện đại)",
+          "roboto": "Roboto (Tiêu chuẩn)",
+          "be_vietnam_pro": "Be Vietnam Pro (Tối ưu TV)",
+          "lora": "Lora (Chuyên nghiệp)",
+          "eb_garamond": "EB Garamond (Cổ điển)",
+          "note": "Các phông chữ này hỗ trợ tốt tiếng Việt và phù hợp cho hồ sơ chuyên nghiệp."
+        },
+        "lineHeight": {
+          "title": "Chiều cao dòng",
+          "normal": "Mặc định",
+          "relaxed": "Giãn cách vừa",
+          "loose": "Giãn cách rộng"
+        },
+        "baseFontSize": {
+          "title": "Cỡ chữ cơ bản"
+        },
+        "headerSize": {
+          "title": "Cỡ chữ tiêu đề mục"
+        },
+        "subheaderSize": {
+          "title": "Cỡ chữ tiêu đề phụ"
+        }
+      },
+      "spacing": {
+        "title": "Giãn cách",
+        "pagePadding": {
+          "title": "Lề trang"
+        },
+        "sectionSpacing": {
+          "title": "Giãn cách giữa các mục"
+        },
+        "paragraphSpacing": {
+          "title": "Giãn cách đoạn văn"
+        }
+      },
+      "mode": {
+        "title": "Chế độ",
+        "useIconMode": {
+          "title": "Chế độ Icon"
+        },
+        "centerSubtitle": {
+          "title": "Căn giữa tiêu đề phụ"
+        },
+        "flexibleHeaderLayout": {
+          "title": "Tiêu đề dài"
+        }
+      }
+    },
+    "basicPanel": {
+      "title": "Thông tin cá nhân",
+      "avatar": "Ảnh đại diện",
+      "basicField": "Cơ bản",
+      "customField": "Tùy chỉnh",
+      "layout": "Căn lề",
+      "customFields": {
+        "placeholders": {
+          "label": "Nhãn",
+          "value": "Giá trị"
+        },
+        "addButton": "Thêm trường tùy chỉnh"
+      },
+      "basicFields": {
+        "name": "Họ và tên",
+        "title": "Vị trí ứng tuyển",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "website": "Website",
+        "location": "Địa chỉ",
+        "birthDate": "Ngày sinh",
+        "employementStatus": "Tình trạng việc làm"
+      },
+      "fieldVisibility": {
+        "show": "Hiện",
+        "hide": "Ẩn"
+      },
+      "githubContributions": "Đóng góp trên GitHub",
+      "github": {
+        "accessToken": "Access Token",
+        "userName": "UserName",
+        "accessTokenPlaceholder": "Nhập GitHub access token",
+        "userNamePlaceholder": "Nhập GitHub username"
+      },
+      "placeholders": {
+        "enterField": "Nhập {label}"
+      }
+    },
+    "experiencePanel": {
+      "title": "Kinh nghiệm làm việc",
+      "addButton": "Thêm kinh nghiệm",
+      "defaultProject": {
+        "company": "Tên công ty / Tổ chức",
+        "position": "Kỹ sư Frontend cao cấp",
+        "date": "2020-Hiện tại",
+        "details": "Chịu trách nhiệm phát triển sản phẩm cốt lõi..."
+      },
+      "placeholders": {
+        "company": "Tên công ty",
+        "position": "Chức danh",
+        "date": "Thời gian làm việc",
+        "details": "Mô tả trách nhiệm và thành tựu"
+      }
+    },
+    "experienceItem": {
+      "labels": {
+        "company": "Tên công ty",
+        "position": "Vị trí",
+        "date": "Thời gian",
+        "details": "Chi tiết công việc"
+      },
+      "placeholders": {
+        "company": "Nhập tên công ty",
+        "position": "VD: Kỹ sư Frontend",
+        "date": "VD: 2020-Hiện tại",
+        "details": "Mô tả chi tiết trách nhiệm và các kết quả đã đạt được"
+      },
+      "buttons": {
+        "edit": "Sửa",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa"
+      },
+      "visibility": {
+        "show": "Hiện",
+        "hide": "Ẩn"
+      }
+    },
+    "projectPanel": {
+      "title": "Dự án",
+      "addButton": "Thêm dự án",
+      "defaultProject": {
+        "name": "Dự án cá nhân",
+        "description": "Mô tả dự án",
+        "role": "Trách nhiệm chính",
+        "date": "2023.01 - 2023.06"
+      },
+      "placeholders": {
+        "name": "Tên dự án",
+        "description": "Mô tả ngắn gọn bối cảnh và mục tiêu dự án",
+        "role": "Vai trò và trách nhiệm của bạn trong dự án",
+        "date": "Thời gian thực hiện",
+        "link": "Link dự án"
+      }
+    },
+    "projectItem": {
+      "labels": {
+        "name": "Tên dự án",
+        "role": "Vai trò",
+        "date": "Thời gian",
+        "description": "Mô tả dự án",
+        "technologies": "Công nghệ sử dụng",
+        "link": "Link dự án"
+      },
+      "placeholders": {
+        "name": "Nhập tên dự án",
+        "role": "Vai trò của bạn",
+        "date": "Thời gian thực hiện",
+        "description": "Mô tả ngắn gọn bối cảnh và mục tiêu dự án",
+        "technologies": "Các công nghệ và công cụ đã sử dụng",
+        "link": "Link dự án"
+      },
+      "buttons": {
+        "edit": "Sửa",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa"
+      },
+      "visibility": {
+        "show": "Hiện",
+        "hide": "Ẩn"
+      }
+    },
+    "educationPanel": {
+      "title": "Học vấn",
+      "addButton": "Thêm học vấn",
+      "defaultProject": {
+        "school": "Tên trường / Học viện",
+        "degree": "Bằng cấp",
+        "major": "Chuyên ngành",
+        "date": "2020.09 - 2024.06"
+      },
+      "placeholders": {
+        "school": "Nhập tên trường",
+        "degree": "Chọn bằng cấp",
+        "major": "Nhập chuyên ngành",
+        "date": "Thời gian học tập"
+      }
+    },
+    "educationItem": {
+      "labels": {
+        "school": "Tên trường",
+        "degree": "Bằng cấp",
+        "major": "Chuyên ngành",
+        "date": "Thời gian",
+        "description": "Mô tả thêm",
+        "gpa": "GPA",
+        "location": "Địa điểm",
+        "startDate": "Ngày bắt đầu",
+        "endDate": "Ngày kết thúc"
+      },
+      "placeholders": {
+        "school": "Nhập tên trường",
+        "degree": "Chọn bằng cấp",
+        "major": "Nhập chuyên ngành",
+        "date": "Thời gian học tập",
+        "description": "Thành tích hoặc các khóa học liên quan",
+        "gpa": "Nhập GPA",
+        "location": "Nhập địa điểm"
+      },
+      "buttons": {
+        "edit": "Sửa",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa"
+      },
+      "visibility": {
+        "show": "Hiện",
+        "hide": "Ẩn"
+      }
+    },
+    "certificatesPanel": {
+      "title": "Chứng chỉ",
+      "addButton": "Thêm chứng chỉ",
+      "tips": "Tải lên hoặc dán (Cmd/Ctrl + V) ảnh trực tiếp. Điều chỉnh tỷ lệ chiều rộng để có bố cục ngang.",
+      "width": "Chiều rộng (%)",
+      "delete": "Xóa",
+      "empty": "Chưa có hình ảnh nào. Vui lòng tải lên hoặc dán ảnh."
+    }
+  },
+  "field": {
+    "selectDate": "Chọn ngày",
+    "enterYear": "Nhập năm",
+    "toPresent": "Đến nay"
+  },
+  "richEditor": {
+    "bold": "Đậm",
+    "italic": "Nghiêng",
+    "underline": "Gạch chân",
+    "textColor": "Màu chữ",
+    "backgroundColor": "Màu nền",
+    "alignLeft": "Căn trái",
+    "alignCenter": "Căn giữa",
+    "alignRight": "Căn phải",
+    "alignJustify": "Căn đều",
+    "bulletList": "Danh sách dấu chấm",
+    "orderedList": "Danh sách đánh số",
+    "undo": "Hoàn tác",
+    "redo": "Làm lại",
+    "aiPolish": "Tối ưu bằng AI",
+    "paragraph": "Đoạn văn",
+    "heading1": "Tiêu đề 1",
+    "heading2": "Tiêu đề 2",
+    "heading3": "Tiêu đề 3",
+    "colors": {
+      "black": "Đen",
+      "darkGray": "Xám đậm",
+      "gray": "Xám",
+      "red": "Đỏ",
+      "orange": "Cam",
+      "orangeYellow": "Vàng cam",
+      "yellow": "Vàng",
+      "yellowGreen": "Vàng xanh",
+      "green": "Xanh lá",
+      "cyan": "Xanh lơ",
+      "lightBlue": "Xanh dương nhạt",
+      "blue": "Xanh dương",
+      "purple": "Tím",
+      "magenta": "Hồng đậm",
+      "pink": "Hồng"
+    }
+  },
+  "iconSelector": {
+    "all": "Tất cả",
+    "searchPlaceholder": "Tìm kiếm icon...",
+    "noMatchingIcons": "Không tìm thấy icon phù hợp",
+    "tryOtherKeywords": "Vui lòng thử từ khóa khác",
+    "selectOtherCategory": "Vui lòng chọn danh mục khác",
+    "categories": {
+      "personal": "Thông tin cá nhân",
+      "education": "Học vấn",
+      "experience": "Kinh nghiệm",
+      "skills": "Kỹ năng",
+      "languages": "Ngôn ngữ",
+      "projects": "Dự án",
+      "achievements": "Thành tựu",
+      "hobbies": "Sở thích",
+      "social": "Mạng xã hội",
+      "others": "Khác"
+    },
+    "icons": {
+      "user": "Người dùng",
+      "email": "Email",
+      "phone": "Điện thoại",
+      "address": "Địa chỉ",
+      "website": "Website",
+      "mobile": "Di động",
+      "education": "Học vấn",
+      "school": "Trường học",
+      "major": "Chuyên ngành",
+      "library": "Thư viện",
+      "scholarship": "Học bổng",
+      "work": "Công việc",
+      "company": "Công ty",
+      "office": "Văn phòng",
+      "dateRange": "Khoảng thời gian",
+      "workTime": "Giờ làm việc",
+      "programming": "Lập trình",
+      "system": "Hệ thống",
+      "database": "Cơ sở dữ liệu",
+      "terminal": "Terminal",
+      "techStack": "Tech Stack",
+      "language": "Ngôn ngữ",
+      "speaking": "Nói",
+      "communication": "Giao tiếp",
+      "project": "Dự án",
+      "branch": "Nhánh",
+      "release": "Phát hành",
+      "target": "Mục tiêu",
+      "trophy": "Cúp",
+      "medal": "Huy chương",
+      "star": "Ngôi sao",
+      "interest": "Hứng thú",
+      "music": "Âm nhạc",
+      "art": "Nghệ thuật",
+      "photography": "Nhiếp ảnh",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "profile": "Hồ sơ",
+      "review": "Đánh giá",
+      "filter": "Bộ lọc",
+      "link": "Liên kết",
+      "salary": "Mức lương",
+      "idea": "Ý tưởng",
+      "send": "Gửi",
+      "share": "Chia sẻ",
+      "settings": "Cài đặt",
+      "search": "Tìm kiếm",
+      "flag": "Cờ",
+      "bookmark": "Dấu trang",
+      "thumbsUp": "Thích",
+      "skill": "Kỹ năng"
+    }
+  },
+  "aiPolishDialog": {
+    "title": "Tối ưu nội dung bằng AI",
+    "description": {
+      "polishing": "Đang tối ưu nội dung của bạn...",
+      "finished": "Đã tối ưu xong, vui lòng kiểm tra kết quả"
+    },
+    "error": {
+      "configRequired": "Vui lòng cấu hình mô hình AI trước",
+      "polishFailed": "Tối ưu thất bại",
+      "applied": "Đã áp dụng nội dung đã tối ưu"
+    },
+    "content": {
+      "original": "Nội dung gốc",
+      "polished": "Nội dung đã tối ưu"
+    },
+    "button": {
+      "regenerate": "Tạo lại",
+      "generating": "Đang tạo...",
+      "apply": "Áp dụng nội dung"
+    }
+  },
+  "photoConfig": {
+    "title": "Cấu hình ảnh",
+    "description": "Tùy chỉnh ảnh trong Resume của bạn",
+    "upload": {
+      "title": "Liên kết trực tuyến",
+      "dragHint": "Kéo thả hoặc nhấn để tải ảnh lên",
+      "sizeLimit": "Kích thước ảnh không được quá 2MB",
+      "typeLimit": "Vui lòng tải lên tệp hình ảnh",
+      "urlPlaceholder": "Nhập liên kết ảnh",
+      "invalidUrl": "Liên kết ảnh không hợp lệ hoặc không thể truy cập, vui lòng thử liên kết khác",
+      "timeout": "Quá thời gian tải",
+      "loadError": "Tải ảnh thất bại"
+    },
+    "config": {
+      "aspectRatio": "Tỷ lệ khung hình",
+      "size": "Kích thước",
+      "width": "Chiều rộng",
+      "height": "Chiều cao",
+      "border-radius": "Bo góc",
+      "widthPlaceholder": "Rộng",
+      "heightPlaceholder": "Cao",
+      "ratios": {
+        "1:1": "1:1 Hình vuông",
+        "4:3": "4:3 Ngang",
+        "3:4": "3:4 Dọc",
+        "16:9": "16:9 Màn ảnh rộng",
+        "custom": "Tùy chỉnh"
+      },
+      "borderRadius": {
+        "none": "Không",
+        "medium": "Vừa",
+        "full": "Tròn",
+        "custom": "Tùy chỉnh",
+        "customPlaceholder": "Nhập độ bo góc"
+      }
+    },
+    "actions": {
+      "reset": "Đặt lại",
+      "close": "Đóng",
+      "cancel": "Hủy",
+      "removePhoto": "Xóa ảnh"
+    }
+  },
+  "themeModal": {
+    "delete": {
+      "title": "Xác nhận xóa",
+      "description": "Bạn có chắc muốn xóa {title} không?",
+      "confirmText": "Xóa",
+      "cancelText": "Hủy"
+    }
+  },
+  "grammarCheck": {
+    "title": "Kiểm tra ngữ pháp bằng AI",
+    "description": "Tìm thấy {count} gợi ý",
+    "exit": "Thoát",
+    "spelling": "Chính tả",
+    "punctuation": "Dấu câu",
+    "original": "Gốc",
+    "error_point": "Lỗi",
+    "suggestion": "Gợi ý",
+    "reason": "Lý do",
+    "accept": "Áp dụng",
+    "ignore": "Bỏ qua",
+    "found_issues": "Tìm thấy {count} vấn đề",
+    "applied_success": "Đã áp dụng các thay đổi",
+    "apply_error": "Không tìm thấy văn bản, không thể áp dụng tự động",
+    "no_errors_title": "Tuyệt vời!",
+    "no_errors_desc": "Không tìm thấy lỗi ngữ pháp hay dấu câu nào."
+  },
+  "mobileWorkbench": {
+    "basicInfo": "Thông tin cá nhân",
+    "content": "Nội dung",
+    "style": "Giao diện",
+    "preview": "Xem trước"
+  },
+  "settings": {
+    "browserNotSupported": "Trình duyệt của bạn không hỗ trợ chọn thư mục. Vui lòng sử dụng trình duyệt hiện đại hơn."
+  }
+}

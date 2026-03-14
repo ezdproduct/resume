@@ -13,11 +13,12 @@ interface SectionWrapperProps {
  * Thin interaction wrapper for all section components.
  * Provides hover highlight + click-to-select behavior.
  */
-const SectionWrapper: React.FC<SectionWrapperProps> = ({
+const SectionWrapper: React.FC<SectionWrapperProps & { dark?: boolean }> = ({
     sectionId,
     children,
     className = "",
     style,
+    dark = false,
 }) => {
     const { setActiveSection } = useResumeStore();
 
@@ -25,7 +26,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
         <motion.div
             className={cn(
                 "hover:cursor-pointer rounded-md transition-all duration-300 ease-in-out hover:shadow-md",
-                "hover:bg-[#f9f8f3]",
+                dark ? "hover:bg-white/10" : "hover:bg-[#f9f8f3]",
                 className
             )}
             style={style}

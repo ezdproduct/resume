@@ -16,7 +16,7 @@ import { useResumeStore } from "@/store/useResumeStore";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ResumeTemplateComponent from "@/components/templates";
 import { useLocale } from "@/i18n/compat/client";
-import { initialResumeState, initialResumeStateEn } from "@/config/initialResumeData";
+import { initialResumeStateVi, initialResumeStateEn } from "@/config/initialResumeData";
 import { normalizeFontFamily } from "@/utils/fonts";
 
 const A4_WIDTH_PX = 794;
@@ -27,7 +27,7 @@ type TemplateItem = (typeof DEFAULT_TEMPLATES)[number];
 interface TemplatePreviewProps {
   template: TemplateItem;
   isActive: boolean;
-  baseData: typeof initialResumeState;
+  baseData: typeof initialResumeStateVi;
   onSelect: (templateId: string) => void;
 }
 
@@ -136,7 +136,7 @@ const TemplateSheet = () => {
     DEFAULT_TEMPLATES[0];
 
   const locale = useLocale();
-  const baseData = locale === "en" ? initialResumeStateEn : initialResumeState;
+  const baseData = locale === "en" ? initialResumeStateEn : initialResumeStateVi;
 
   return (
     <Sheet>

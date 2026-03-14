@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { GlobalSettings, CustomItem } from "@/types/resume";
 import { normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString, cn } from "@/lib/utils";
+import { formatDateString, cn, hardenVietnamese } from "@/lib/utils";
 import { useLocale } from "@/i18n/compat/client";
 
 interface CustomSectionProps {
@@ -26,13 +26,13 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
             <AnimatePresence mode="popLayout">
                 {visibleItems.map((item) => (
                     <motion.div key={item.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                        <motion.div layout="position" className="flex items-center justify-between gap-4">
-                            <div className={cn("flex items-center gap-2 truncate", flexLayout ? "" : "flex-1")}>
-                                <h4 className="font-bold truncate" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{item.title}</h4>
+                        <motion.div layout="position" className="flex items-start justify-between gap-4">
+                            <div className={cn("flex items-center gap-2 flex-1 min-w-0")}>
+                                <h4 className="font-bold whitespace-pre-wrap text-pretty" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{hardenVietnamese(item.title)}</h4>
                             </div>
                             {centerSubtitle && (
-                                <motion.div layout="position" className={cn("text-subtitleFont truncate", flexLayout ? "ml-[16px]" : "flex-1")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
-                                    {item.subtitle}
+                                <motion.div layout="position" className={cn("text-subtitleFont whitespace-pre-wrap text-pretty flex-1 text-center")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
+                                    {hardenVietnamese(item.subtitle)}
                                 </motion.div>
                             )}
                             <span className={cn("text-subtitleFont shrink-0 whitespace-nowrap", flexLayout ? "ml-auto" : "text-right")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
@@ -40,7 +40,7 @@ const CustomSection = ({ sectionId, title, items, globalSettings, showTitle = tr
                             </span>
                         </motion.div>
                         {!centerSubtitle && item.subtitle && (
-                            <motion.div layout="position" className="text-subtitleFont mt-1" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{item.subtitle}</motion.div>
+                            <motion.div layout="position" className="text-subtitleFont mt-1 whitespace-pre-wrap text-pretty" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{hardenVietnamese(item.subtitle)}</motion.div>
                         )}
                         {item.description && (
                             <motion.div layout="position" className="mt-1 text-baseFont"

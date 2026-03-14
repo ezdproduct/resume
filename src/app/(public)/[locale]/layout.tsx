@@ -8,7 +8,7 @@ import {
   setRequestLocale
 } from "@/i18n/compat/server";
 import Document from "@/components/Document";
-import { locales } from "@/i18n/config";
+import { locales, type Locale } from "@/i18n/config";
 import { Providers } from "@/app/providers";
 
 type Props = {
@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale }
 }: Props): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "common" });
+  const t = await getTranslations({ locale: locale as Locale, namespace: "common" });
   const baseUrl = "https://magicv.art";
 
   return {
@@ -36,7 +36,7 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       locale: locale,
-      alternateLocale: locale === "en" ? ["zh"] : ["en"]
+      alternateLocale: locale === "en" ? ["vi"] : ["en"]
     }
   };
 }
@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   children,
   params: { locale }
 }: Props) {
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
 
   if (!locales.includes(locale as any)) {
     notFound();
@@ -54,8 +54,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <Document locale={locale}>
-      <NextIntlClientProvider messages={messages}>
+    <Document locale={locale as Locale}>
+      <NextIntlClientProvider messages={messages} locale={locale as Locale}>
         <Providers>{children}</Providers>
       </NextIntlClientProvider>
     </Document>

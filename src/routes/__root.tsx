@@ -9,8 +9,8 @@ import appCss from "../app/globals.css?url";
 import appFontCss from "../app/font.css?url";
 import { NextIntlClientProvider } from "@/i18n/compat/client";
 import { useEffect } from "react";
-import zhMessages from "@/i18n/locales/zh.json";
 import enMessages from "@/i18n/locales/en.json";
+import viMessages from "@/i18n/locales/vi.json";
 import { Providers } from "@/app/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { getPreferredLocale } from "@/i18n/runtime";
@@ -45,7 +45,7 @@ function RootComponent() {
     select: (location) => location.pathname
   });
   const locale = getPreferredLocale(pathname);
-  const messages = locale === "en" ? enMessages : zhMessages;
+  const messages = locale === "en" ? enMessages : viMessages;
 
   useEffect(() => {
     document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
@@ -62,7 +62,7 @@ function RootComponent() {
         <NextIntlClientProvider
           locale={locale}
           messages={messages}
-          timeZone="Asia/Shanghai"
+          timeZone="Asia/Ho_Chi_MinH"
         >
           <Providers>
             <Outlet />
@@ -78,7 +78,7 @@ function RootComponent() {
 function RootNotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center">
-      <p className="text-muted-foreground">页面不存在</p>
+      <p className="text-muted-foreground">Trang không tồn tại</p>
     </main>
   );
 }

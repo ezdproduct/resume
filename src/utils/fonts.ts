@@ -13,12 +13,42 @@ type FontDefinition = {
   sources: FontSource[];
 };
 
-export const DEFAULT_FONT_FAMILY = "\"Alibaba PuHuiTi\", sans-serif";
+export const DEFAULT_FONT_FAMILY = "\"Inter\", sans-serif";
 
 const FONT_DEFINITIONS: FontDefinition[] = [
   {
+    labelKey: "inter",
+    value: "\"Inter\", sans-serif",
+    aliases: ["Inter", "sans-serif"],
+    sources: [] // Use system/Google Fonts loaded globally
+  },
+  {
+    labelKey: "roboto",
+    value: "\"Roboto\", sans-serif",
+    aliases: ["Roboto", "sans-serif"],
+    sources: []
+  },
+  {
+    labelKey: "be_vietnam_pro",
+    value: "\"Be Vietnam Pro\", sans-serif",
+    aliases: ["Be Vietnam Pro", "sans-serif"],
+    sources: []
+  },
+  {
+    labelKey: "lora",
+    value: "\"Lora\", serif",
+    aliases: ["Lora", "serif"],
+    sources: []
+  },
+  {
+    labelKey: "eb_garamond",
+    value: "\"EB Garamond\", serif",
+    aliases: ["EB Garamond", "serif"],
+    sources: []
+  },
+  {
     labelKey: "alibaba",
-    value: DEFAULT_FONT_FAMILY,
+    value: "\"Alibaba PuHuiTi\", sans-serif",
     aliases: [
       "Alibaba PuHuiTi, sans-serif",
       "\"Alibaba PuHuiTi\", sans-serif"

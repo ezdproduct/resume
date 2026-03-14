@@ -47,9 +47,7 @@ const SettingsPage = () => {
   const handleSelectDirectory = async () => {
     try {
       if (!("showDirectoryPicker" in window)) {
-        alert(
-          "Your browser does not support directory selection. Please use a modern browser."
-        );
+        alert(t("settings.browserNotSupported"));
         return;
       }
 
@@ -135,7 +133,7 @@ const SettingsPage = () => {
                       variant="outline"
                       size="icon"
                       className="h-12 w-12 rounded-xl border-gray-200 dark:border-gray-800 hover:bg-red-50 hover:text-red-500 hover:border-red-200 dark:hover:bg-red-950/30 dark:hover:text-red-400 dark:hover:border-red-900/50 transition-colors"
-                      title="Remove synced directory"
+                      title={t("dashboard.settings.syncDirectory.changeFolder")}
                     >
                       <Trash2 className="h-5 w-5" />
                     </Button>

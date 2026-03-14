@@ -63,11 +63,11 @@ export default function HeroSection() {
              <div className="absolute -inset-4 bg-gradient-to-b from-primary/5 to-transparent rounded-[3rem] blur-2xl -z-10" />
              <div className="relative rounded-3xl border border-border/50 bg-secondary/30 p-2 sm:p-4 backdrop-blur-sm shadow-2xl overflow-hidden group">
                 <Image
-                  src="/web-shot.png"
+                  src="/landing-preview.png"
                   alt="Resume Editor Preview"
                   width={1200}
                   height={800}
-                  className="rounded-2xl shadow-sm group-hover:scale-[1.01] transition-transform duration-700"
+                  className="rounded-2xl shadow-sm group-hover:scale-[1.01] transition-transform duration-700 contrast-[1.1] brightness-[1.02]"
                   priority
                 />
              </div>

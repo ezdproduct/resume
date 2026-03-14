@@ -4,7 +4,7 @@ import { Experience, GlobalSettings } from "@/types/resume";
 import SectionTitle from "./SectionTitle";
 import SectionWrapper from "../../shared/SectionWrapper";
 import { normalizeRichTextContent } from "@/lib/richText";
-import { formatDateString, cn } from "@/lib/utils";
+import { formatDateString, cn, hardenVietnamese } from "@/lib/utils";
 import { useLocale } from "@/i18n/compat/client";
 
 interface ExperienceSectionProps {
@@ -25,13 +25,13 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
             <AnimatePresence mode="popLayout">
                 {visibleExperiences?.map((exp) => (
                     <motion.div key={exp.id} layout="position" style={{ marginTop: `${globalSettings?.paragraphSpacing}px` }}>
-                        <motion.div className="flex items-center justify-between gap-4">
-                            <div className={cn("font-bold truncate", flexLayout ? "" : "flex-1")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
-                                {exp.company}
+                        <motion.div className="flex items-start justify-between gap-4">
+                            <div className={cn("font-bold whitespace-pre-wrap break-words text-pretty", flexLayout ? "shrink-0" : "flex-1")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
+                                {hardenVietnamese(exp.company)}
                             </div>
                             {centerSubtitle && (
-                                <motion.div className={cn("text-subtitleFont truncate", flexLayout ? "ml-[16px]" : "flex-1")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
-                                    {exp.position}
+                                <motion.div className={cn("text-subtitleFont whitespace-pre-wrap text-pretty flex-1 text-center")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
+                                    {hardenVietnamese(exp.position)}
                                 </motion.div>
                             )}
                             <div className={cn("text-subtitleFont shrink-0 whitespace-nowrap", flexLayout ? "ml-auto" : "text-right")} style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>
@@ -39,7 +39,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences, glob
                             </div>
                         </motion.div>
                         {exp.position && !centerSubtitle && (
-                            <motion.div className="text-subtitleFont" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{exp.position}</motion.div>
+                            <motion.div className="text-subtitleFont whitespace-pre-wrap text-pretty" style={{ fontSize: `${globalSettings?.subheaderSize || 16}px` }}>{hardenVietnamese(exp.position)}</motion.div>
                         )}
                         {exp.details && (
                             <motion.div className="mt-1 text-baseFont" dangerouslySetInnerHTML={{ __html: normalizeRichTextContent(exp.details) }}

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
-import { cn, formatDateString } from "@/lib/utils";
+import { cn, formatDateString, hardenVietnamese } from "@/lib/utils";
 import { BasicInfo, getBorderRadiusValue, GlobalSettings } from "@/types/resume";
 import { ResumeTemplate } from "@/types/template";
 import SectionWrapper from "../../shared/SectionWrapper";
@@ -16,15 +16,18 @@ interface BaseInfoProps {
 /**
  * Modern template BaseInfo — designed for sidebar (white text on theme color background).
  */
-const BaseInfo = ({ basic = {} as BasicInfo, globalSettings, template }: BaseInfoProps) => {
+const BaseInfo = ({ basic = {} as BasicInfo, globalSettings, template, variant = "default" }: BaseInfoProps & { variant?: "default" | "sidebar" }) => {
     const t = useTranslations("workbench");
     const locale = useLocale();
     const useIconMode = globalSettings?.useIconMode ?? false;
+    const isSidebar = variant === "sidebar";
 
     const getIcon = (iconName: string | undefined) => {
         const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
         return IconComponent ? <IconComponent className="w-4 h-4" /> : null;
     };
+
+
 
     const getOrderedFields = React.useMemo(() => {
         if (!basic.fieldOrder) {
@@ -38,7 +41,7 @@ const BaseInfo = ({ basic = {} as BasicInfo, globalSettings, template }: BaseInf
                 icon: basic.icons?.[field.key] || "User", label: field.label, visible: field.visible, custom: field.custom,
             }))
             .filter((item) => Boolean(item.value));
-    }, [basic]);
+    }, [basic, locale]);
 
     const allFields = [
         ...getOrderedFields,
@@ -59,33 +62,53 @@ const BaseInfo = ({ basic = {} as BasicInfo, globalSettings, template }: BaseInf
     );
 
     return (
-        <SectionWrapper sectionId="basic">
-            <div className="flex flex-col items-center gap-3">
-                <div className="flex flex-col items-center gap-4">
-                    {PhotoComponent}
-                    <div className="flex flex-col text-center min-w-0" style={{ color: "#fff" }}>
+        <SectionWrapper sectionId="basic" dark={isSidebar}>
+            <div className={cn("flex flex-col gap-3", isSidebar ? "items-start" : "items-center")}>
+                <div className={cn("flex flex-col gap-4", isSidebar ? "items-start w-full" : "items-center")}>
+                    {PhotoComponent && (
+                        <div className={cn("w-full flex", isSidebar ? "justify-start" : "justify-center")}>
+                            {PhotoComponent}
+                        </div>
+                    )}
+                    <div className={cn("flex flex-col min-w-0", isSidebar ? "text-left" : "text-center")} style={{ color: "#fff" }}>
                         {nameField.visible !== false && basic[nameField.key] && (
-                            <motion.h1 layout="position" className="font-bold whitespace-pre-wrap break-words" style={{ fontSize: "30px", color: "#fff" }}>{basic[nameField.key] as string}</motion.h1>
+                            <motion.h1 layout="position" className="font-bold whitespace-pre-wrap text-balance text-pretty"
+                                style={{
+                                    fontSize: isSidebar ? "24px" : "30px",
+                                    lineHeight: 1.2,
+                                    color: "#fff"
+                                }}>
+                                {basic[nameField.key] as string}
+                            </motion.h1>
                         )}
                         {titleField.visible !== false && basic[titleField.key] && (
-                            <motion.h2 layout="position" className="whitespace-pre-wrap break-words" style={{ fontSize: "18px", color: "#fff" }}>{basic[titleField.key] as string}</motion.h2>
+                            <motion.h2 layout="position" className="whitespace-pre-wrap text-pretty mt-1"
+                                style={{
+                                    fontSize: isSidebar ? "16px" : "18px",
+                                    color: "#fff",
+                                    opacity: 0.9
+                                }}>
+                                {hardenVietnamese(basic[titleField.key] as string)}
+                            </motion.h2>
                         )}
                     </div>
                 </div>
                 <motion.div layout="position" className="w-full flex flex-col gap-2"
                     style={{ fontSize: `${globalSettings?.baseFontSize || 14}px`, color: "#fff" }}>
                     {allFields.map((item) => (
-                        <motion.div key={item.key} className="flex items-center whitespace-nowrap overflow-hidden text-baseFont" style={{ width: "100%", color: "#fff" }}>
+                        <motion.div key={item.key} className="flex items-start text-baseFont group" style={{ width: "100%", color: "#fff" }}>
                             {useIconMode ? (
-                                <div className="flex items-center gap-1" style={{ color: "#fff" }}>
-                                    {getIcon(item.icon)}
-                                    {item.key === "email" ? <a href={`mailto:${item.value}`} className="underline" style={{ color: "#fff" }}>{item.value}</a> : <span style={{ color: "#fff" }}>{item.value}</span>}
+                                <div className="flex items-start gap-2" style={{ color: "#fff" }}>
+                                    <div className="shrink-0 mt-1">{getIcon(item.icon)}</div>
+                                    {item.key === "email" ?
+                                        <a href={`mailto:${item.value}`} className="underline break-all" style={{ color: "#fff" }}>{item.value}</a>
+                                        : <span className="break-words" style={{ color: "#fff" }}>{item.value}</span>}
                                 </div>
                             ) : (
-                                <div className="flex items-center gap-2 overflow-hidden" style={{ color: "#fff" }}>
-                                    {!item.custom && <span style={{ color: "#fff" }}>{t(`basicPanel.basicFields.${item.key}`)}:</span>}
-                                    {item.custom && <span style={{ color: "#fff" }}>{item.label}:</span>}
-                                    <span className="truncate" suppressHydrationWarning style={{ color: "#fff" }}>{item.value}</span>
+                                <div className="flex items-start gap-2" style={{ color: "#fff" }}>
+                                    {!item.custom && <span className="shrink-0 opacity-80" style={{ color: "#fff" }}>{t(`basicPanel.basicFields.${item.key}`)}:</span>}
+                                    {item.custom && <span className="shrink-0 opacity-80" style={{ color: "#fff" }}>{item.label}:</span>}
+                                    <span className="break-all" suppressHydrationWarning style={{ color: "#fff" }}>{item.value}</span>
                                 </div>
                             )}
                         </motion.div>

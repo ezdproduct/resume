@@ -266,6 +266,7 @@
     }
   },
   "previewDock": {
+    "pageBreak": "Page {pageNumber} End",
     "switchTemplate": "Switch Template",
     "grammarCheck": {
       "idle": "AI Grammar Check",
@@ -333,7 +334,12 @@
           "misans": "MiSans",
           "notosanssc": "Noto Sans SC",
           "sourcehanserifsc": "Source Han Serif SC",
-          "note": "MiSans is used under its free commercial license. Keep MiSans attribution when distributing this project."
+          "inter": "Inter (Modern)",
+          "roboto": "Roboto (Standard)",
+          "be_vietnam_pro": "Be Vietnam Pro (VN Optimized)",
+          "lora": "Lora (Professional)",
+          "eb_garamond": "EB Garamond (Classic)",
+          "note": "These fonts support Vietnamese well and are suitable for professional CVs."
         },
         "lineHeight": {
           "title": "Line Height",
@@ -403,7 +409,16 @@
         "show": "Show",
         "hide": "Hide"
       },
-      "githubContributions": "GitHub Contributions"
+      "githubContributions": "GitHub Contributions",
+      "github": {
+        "accessToken": "Access Token",
+        "userName": "UserName",
+        "accessTokenPlaceholder": "Enter GitHub access token",
+        "userNamePlaceholder": "Enter GitHub username"
+      },
+      "placeholders": {
+        "enterField": "Enter {label}"
+      }
     },
     "experiencePanel": {
       "title": "Work Experience",

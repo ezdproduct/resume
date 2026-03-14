@@ -14,10 +14,10 @@ import {
 } from "../types/resume";
 import { DEFAULT_TEMPLATES } from "@/config";
 import {
-  initialResumeState,
   initialResumeStateEn,
-  blankResumeState,
+  initialResumeStateVi,
   blankResumeStateEn,
+  blankResumeStateVi,
 } from "@/config/initialResumeData";
 import { generateUUID } from "@/utils/uuid";
 interface ResumeStore {
@@ -127,16 +127,16 @@ export const useResumeStore = create(
             ? document.cookie
                 .split("; ")
                 .find((row) => row.startsWith("NEXT_LOCALE="))
-                ?.split("=")[1] || "zh"
-            : "zh";
+                ?.split("=")[1] || "vi"
+            : "vi";
 
         let initialResumeData: any;
         if (isBlank) {
           initialResumeData =
-            locale === "en" ? blankResumeStateEn : blankResumeState;
+            locale === "en" ? blankResumeStateEn : blankResumeStateVi;
         } else {
           initialResumeData =
-            locale === "en" ? initialResumeStateEn : initialResumeState;
+            locale === "en" ? initialResumeStateEn : initialResumeStateVi;
         }
 
         const id = generateUUID();
@@ -150,10 +150,9 @@ export const useResumeStore = create(
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           templateId: template?.id,
-          title: `${locale === "en" ? "New Resume" : "新建简历"} ${id.slice(
-            0,
-            6
-          )}`,
+          title: `${
+            locale === "en" ? "New Resume" : "Resume mới"
+          } ${id.slice(0, 6)}`,
         };
 
         set((state) => ({
@@ -251,14 +250,14 @@ export const useResumeStore = create(
             ? document.cookie
                 .split("; ")
                 .find((row) => row.startsWith("NEXT_LOCALE="))
-                ?.split("=")[1] || "zh"
-            : "zh";
+                ?.split("=")[1] || "vi"
+            : "vi";
 
         const duplicatedResume = {
           ...originalResume,
           id: newId,
           title: `${originalResume.title} (${
-            locale === "en" ? "Copy" : "复制"
+            locale === "en" ? "Copy" : "Bản sao"
           })`,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
@@ -486,7 +485,7 @@ export const useResumeStore = create(
             [sectionId]: [
               {
                 id: generateUUID(),
-                title: "未命名模块",
+                title: locale === "en" ? "New Module" : "Mô-đun mới",
                 subtitle: "",
                 dateRange: "",
                 description: "",
@@ -529,7 +528,7 @@ export const useResumeStore = create(
               ...(currentResume.customData[sectionId] || []),
               {
                 id: generateUUID(),
-                title: "未命名模块",
+                title: locale === "en" ? "New Module" : "Mô-đun mới",
                 subtitle: "",
                 dateRange: "",
                 description: "",

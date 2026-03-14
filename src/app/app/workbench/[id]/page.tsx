@@ -21,6 +21,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useTranslations } from "@/i18n/compat/client";
 
 const LAYOUT_CONFIG = {
   DEFAULT: [20, 32, 48],
@@ -70,87 +71,92 @@ const LayoutControls = memo(
     toggleSidePanel: () => void;
     toggleEditPanel: () => void;
     togglePreviewPanel: () => void;
-  }) => (
-    <div
-      className={cn(
-        "absolute bottom-6 left-1/2 -translate-x-1/2",
-        "flex items-center gap-2 z-10 p-2 rounded-full",
-        "flex items-center gap-2 z-10 p-2 rounded-full",
-        "bg-background/80 border border-border",
-        "backdrop-blur-sm shadow-lg"
-      )}
-    >
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              variant={sidePanelCollapsed ? "secondary" : "ghost"}
-              size="icon"
-              className="h-9 w-9 rounded-full"
-              onClick={toggleSidePanel}
-            >
-              <PanelLeft className="h-4 w-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p className="text-xs">
-              {sidePanelCollapsed ? "展开侧边栏" : "收起侧边栏"}
-            </p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+  }) => {
+    const t = useTranslations("previewDock.sidePanel");
+    const te = useTranslations("previewDock.editPanel");
+    const tp = useTranslations("previewDock.previewPanel");
 
-      <div className={cn("h-5 w-px mx-1", "bg-border")} />
+    return (
+      <div
+        className={cn(
+          "absolute bottom-6 left-1/2 -translate-x-1/2",
+          "flex items-center gap-2 z-10 p-2 rounded-full",
+          "bg-background/80 border border-border",
+          "backdrop-blur-sm shadow-lg"
+        )}
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={sidePanelCollapsed ? "secondary" : "ghost"}
+                size="icon"
+                className="h-9 w-9 rounded-full"
+                onClick={toggleSidePanel}
+              >
+                <PanelLeft className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="text-xs">
+                {sidePanelCollapsed ? t("expand") : t("collapse")}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
 
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              variant={editPanelCollapsed ? "secondary" : "ghost"}
-              size="icon"
-              className="h-9 w-9 rounded-full"
-              onClick={toggleEditPanel}
-            >
-              {editPanelCollapsed ? (
-                <Edit2 className="h-4 w-4" />
-              ) : (
-                <Minimize2 className="h-4 w-4" />
-              )}
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p className="text-xs">
-              {editPanelCollapsed ? "展开编辑面板" : "收起编辑面板"}
-            </p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+        <div className={cn("h-5 w-px mx-1", "bg-border")} />
 
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              variant={previewPanelCollapsed ? "secondary" : "ghost"}
-              size="icon"
-              className="h-9 w-9 rounded-full"
-              onClick={togglePreviewPanel}
-            >
-              {previewPanelCollapsed ? (
-                <Eye className="h-4 w-4" />
-              ) : (
-                <Minimize2 className="h-4 w-4" />
-              )}
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p className="text-xs">
-              {previewPanelCollapsed ? "展开预览面板" : "收起预览面板"}
-            </p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-    </div>
-  )
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={editPanelCollapsed ? "secondary" : "ghost"}
+                size="icon"
+                className="h-9 w-9 rounded-full"
+                onClick={toggleEditPanel}
+              >
+                {editPanelCollapsed ? (
+                  <Edit2 className="h-4 w-4" />
+                ) : (
+                  <Minimize2 className="h-4 w-4" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="text-xs">
+                {editPanelCollapsed ? te("expand") : te("collapse")}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={previewPanelCollapsed ? "secondary" : "ghost"}
+                size="icon"
+                className="h-9 w-9 rounded-full"
+                onClick={togglePreviewPanel}
+              >
+                {previewPanelCollapsed ? (
+                  <Eye className="h-4 w-4" />
+                ) : (
+                  <Minimize2 className="h-4 w-4" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="text-xs">
+                {previewPanelCollapsed ? tp("expand") : tp("collapse")}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+    );
+  }
 );
 
 LayoutControls.displayName = "LayoutControls";

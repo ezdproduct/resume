@@ -142,10 +142,12 @@ export const ResumeWorkbench = () => {
         const config = JSON.parse(content);
         const now = new Date().toISOString();
         const { generateUUID } = await import("@/utils/uuid");
-        const { initialResumeState } = await import("@/config/initialResumeData");
+        const { initialResumeStateVi, initialResumeStateEn } = await import("@/config/initialResumeData");
+
+        const baseData = locale === "en" ? initialResumeStateEn : initialResumeStateVi;
 
         const newResume = {
-            ...initialResumeState,
+            ...baseData,
             ...config,
             id: generateUUID(),
             createdAt: now,

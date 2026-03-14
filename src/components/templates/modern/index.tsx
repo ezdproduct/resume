@@ -22,14 +22,14 @@ const ModernTemplate: React.FC<ModernTemplateProps> = ({ data, template }) => {
     const { colorScheme } = template;
     const enabledSections = data.menuSections.filter((s) => s.enabled).sort((a, b) => a.order - b.order);
 
-    const renderSection = (sectionId: string) => {
+    const renderSection = (sectionId: string, variant: "default" | "sidebar" = "default") => {
         switch (sectionId) {
             case "basic":
-                return <BaseInfo basic={data.basic} globalSettings={data.globalSettings} template={template} />;
+                return <BaseInfo basic={data.basic} globalSettings={data.globalSettings} template={template} variant={variant} />;
             case "experience":
                 return <ExperienceSection experiences={data.experience} globalSettings={data.globalSettings} />;
             case "education":
-                return <EducationSection education={data.education} globalSettings={data.globalSettings} />;
+                return <EducationSection education={data.education} globalSettings={data.globalSettings} variant={variant} />;
             case "skills":
                 return <SkillSection skill={data.skillContent} globalSettings={data.globalSettings} />;
             case "projects":
@@ -68,18 +68,19 @@ const ModernTemplate: React.FC<ModernTemplateProps> = ({ data, template }) => {
             <tbody>
                 <tr>
                     <td
-                        className="p-4 align-top relative"
+                        className="align-top relative"
                         style={{
                             width: '33.333333%',
                             backgroundColor: data.globalSettings.themeColor,
                             color: "#ffffff",
-                            paddingTop: data.globalSettings.sectionSpacing,
+                            padding: '16px',
+                            paddingTop: `${data.globalSettings.sectionSpacing || 24}px`,
                         }}
                     >
-                        {basicSection && renderSection(basicSection.id)}
+                        {basicSection && renderSection(basicSection.id, "sidebar")}
                         {educationSection && (
                             <div className="mt-6">
-                                <EducationSection education={data.education} globalSettings={data.globalSettings} variant="sidebar" />
+                                {renderSection(educationSection.id, "sidebar")}
                             </div>
                         )}
                     </td>

@@ -1,8 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import LandingPage from "@/app/(public)/[locale]/page";
 import { defaultLocale, locales, type Locale } from "@/i18n/config";
-import zhMessages from "@/i18n/locales/zh.json";
 import enMessages from "@/i18n/locales/en.json";
+import viMessages from "@/i18n/locales/vi.json";
 
 const SEO_BASE_URL = "https://magicv.art";
 
@@ -14,12 +14,12 @@ function resolveLocale(rawLocale: string): Locale {
 }
 
 function getLocaleSeo(locale: Locale) {
-  const messages = locale === "en" ? enMessages : zhMessages;
+  const messages = locale === "vi" ? viMessages : enMessages;
   const title = `${messages.common.title} - ${messages.common.subtitle}`;
   const description = messages.common.description;
-  const localeTag = locale === "en" ? "en_US" : "zh_CN";
+  const localeTag = locale === "vi" ? "vi_VN" : "en_US";
   const canonical = `${SEO_BASE_URL}/${locale}`;
-  const alternateLocale = locale === "en" ? "zh" : "en";
+  const alternateLocale = locale === "vi" ? "en" : "vi";
 
   return {
     title,
@@ -46,11 +46,11 @@ export const Route = createFileRoute("/$locale")({
         { property: "og:description", content: seo.description },
         { property: "og:locale", content: seo.localeTag },
         { property: "og:url", content: seo.canonical },
-        { property: "og:image", content: `${SEO_BASE_URL}/web-shot.png` },
+        { property: "og:image", content: `${SEO_BASE_URL}/landing-preview.png` },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: seo.title },
         { name: "twitter:description", content: seo.description },
-        { name: "twitter:image", content: `${SEO_BASE_URL}/web-shot.png` }
+        { name: "twitter:image", content: `${SEO_BASE_URL}/landing-preview.png` }
       ],
       links: [
         { rel: "canonical", href: seo.canonical },

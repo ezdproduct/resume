@@ -298,7 +298,9 @@ const BasicPanel: React.FC = () => {
                     [field.key]: value,
                   })
                 }
-                placeholder={`请输入${field.label}`}
+                placeholder={t("placeholders.enterField", {
+                  label: t(`basicFields.${field.key}`),
+                })}
                 type={field.type}
               />
             </div>
@@ -450,10 +452,10 @@ const BasicPanel: React.FC = () => {
                     </div>
 
                     <div className="mt-4">
-                      <div className="flex items-center ml-3 space-x-2">
-                        <div className=" w-[110px]">Access Token</div>
+                      <div className=" flex items-center ml-3 space-x-2">
+                        <div className=" w-[110px]">{t("github.accessToken")}</div>
                         <Input
-                          placeholder="请输入github access token"
+                          placeholder={t("github.accessTokenPlaceholder")}
                           className="flex-1"
                           value={basic?.githubKey}
                           onChange={(e) =>
@@ -465,10 +467,10 @@ const BasicPanel: React.FC = () => {
                         />
                       </div>
                       <div className="flex items-center ml-3 mt-4 space-x-2">
-                        <div className="w-[110px]">UseName</div>
+                        <div className="w-[110px]">{t("github.userName")}</div>
                         <Input
                           className="flex-1"
-                          placeholder="请输入github username"
+                          placeholder={t("github.userNamePlaceholder")}
                           value={basic?.githubUseName}
                           onChange={(e) =>
                             updateBasicInfo({

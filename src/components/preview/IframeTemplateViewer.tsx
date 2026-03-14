@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import { useParams } from "@tanstack/react-router";
 import { DEFAULT_TEMPLATES } from "../../config";
-import { initialResumeState, initialResumeStateEn } from "../../config/initialResumeData";
+import { initialResumeStateVi, initialResumeStateEn } from "../../config/initialResumeData";
 import ResumeTemplateComponent from "../templates";
 import { cn } from "../../lib/utils";
 import { ResumeData } from "../../types/resume";
@@ -18,15 +18,15 @@ const IframeTemplateViewer = () => {
       ? document.cookie
         .split("; ")
         .find((row) => row.startsWith("NEXT_LOCALE="))
-        ?.split("=")[1] || "zh"
-      : "zh";
+        ?.split("=")[1] || "vi"
+      : "vi";
 
   const template = useMemo(() => {
     return DEFAULT_TEMPLATES.find((t: ResumeTemplate) => t.id === id) || DEFAULT_TEMPLATES[0];
   }, [id]);
 
   const mockData: ResumeData = useMemo(() => {
-    const baseData = locale === "en" ? initialResumeStateEn : initialResumeState;
+    const baseData = locale === "en" ? initialResumeStateEn : initialResumeStateVi;
     return {
       ...baseData,
       id: "preview-mock-id",
